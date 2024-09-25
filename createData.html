@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Data - Aplikasi Data Pribadi</title>
+    <link rel="icon" href="assets/image/story.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="/assets/css/createData.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="createDataCard">
+      <div class="d-flex mt-2 mb-2 gap-2">
+        <img
+          src="/assets/image/story.png"
+          class="img-fluid rounded-top"
+          style="width: 30px"
+        />
+        <h5>Aplikasi Data Pribadi</h5>
+      </div>
+      <h4>Tambahkan Data Baru</h4>
+      <form id="addKaryawanForm">
+        <div style="display: flex; flex-direction: column">
+          <label for="nik">NIK</label>
+          <input class="form-control" id="nik" name="nik" required />
+        </div>
+        <div class="inputDiv">
+          <label for="name">Nama lengkap</label>
+          <input class="form-control" id="name" name="name" required />
+        </div>
+        <div class="genderDiv">
+          <label for="jenisKelamin">Jenis kelamin</label>
+          <div>
+            <div>
+              <input type="radio" id="male" name="jenisKelamin" value="L" />
+              <label for="male">Laki Laki</label>
+            </div>
+            <div>
+              <input type="radio" id="female" name="jenisKelamin" value="P" />
+              <label for="female">Perempuan</label>
+            </div>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <label for="tanggalLahir">Tanggal Lahir</label>
+          <input
+            class="form-control"
+            id="tanggalLahir"
+            type="date"
+            name="tanggalLahir"
+            required
+          />
+        </div>
+        <div class="inputDiv">
+          <label for="alamat">Alamat</label>
+          <textarea
+            class="form-control"
+            id="alamat"
+            name="alamat"
+            style="resize: none; height: 5rem"
+          ></textarea>
+        </div>
+        <div class="inputDiv">
+          <label for="negara">Negara</label>
+          <select class="form-control" id="negara" name="negara" required>
+            <option value="">Pilih Negara</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Amerika Serikat">Amerika Serikat</option>
+            <option value="Jepang">Jepang</option>
+            <option value="Prancis">Prancis</option>
+            <option value="Jerman">Jerman</option>
+            <option value="Inggris">Inggris</option>
+            <option value="Tiongkok">Tiongkok</option>
+            <option value="India">India</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Australia">Australia</option>
+          </select>
+        </div>
+        <div class="buttonDiv">
+          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button type="button" class="btn btn-secondary backButton">
+            Kembali
+          </button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/create.js"></script>
+  </body>
+</html>

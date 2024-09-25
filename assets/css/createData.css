@@ -1,0 +1,54 @@
+a {
+  text-decoration: none;
+}
+
+.createDataCard {
+  border: 2px solid black;
+  width: 25rem;
+  padding: 10px 50px 10px 10px;
+  margin: 50px auto; 
+  border-radius: 5px;
+  
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.genderDiv {
+  margin-top: 10px;
+}
+
+.genderDiv div {
+  display: flex;
+  gap: 10px;
+}
+
+.genderDiv div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonDiv {
+  margin-top: 20px;
+  gap: 10px;
+}
+
+/* .buttonDiv button {
+  color: white;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #4472c4;
+} */
+
+.buttonDiv a {
+  color: white;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #a6a6a6;
+}
