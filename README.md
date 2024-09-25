@@ -1,0 +1,1 @@
+saya buat repository ini berdasarkan test istidata soal no 1 membuat aplikasi karyawan di repository ini memiliki 2 branch frontend yang berisi html, css, dan js serta branch backend yang berisi springboot
