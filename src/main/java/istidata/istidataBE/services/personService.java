@@ -9,8 +9,13 @@ import jakarta.validation.ValidationException;
 import java.util.List;
 import java.util.Optional;
 
+//anotasi service
 @Service
 public class personService{
+
+    // @Autowired mempermudah pengelolaan dependency dengan mengizinkan Spring untuk menyuntikkan objek yang diperlukan secara otomatis.
+    // Dependency Injection: Mengurangi keterikatan dan meningkatkan modularitas aplikasi.
+    // Penerapan: Bisa digunakan pada field, constructor, atau setter method.
 
     @Autowired
     private personRepository personRepo;

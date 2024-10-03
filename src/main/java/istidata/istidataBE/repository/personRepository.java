@@ -14,3 +14,6 @@ public interface personRepository extends JpaRepository<Person, Long> {
 
     List<Person> findByNikAndName(String nik,String name);
 }
+
+// Repository interface untuk entitas Person yang digunakan untuk 
+// berinteraksi dengan database melalui Spring Data JPA.

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.ValidationException;
 import java.util.List;
 
 @RestController
@@ -16,14 +17,35 @@ public class personController{
     private personService personservice;
 
     @PostMapping
-    public ResponseEntity<Person> createUser(@RequestBody Person person){
-        System.out.println(person);
-        return new ResponseEntity<>(personservice.createPerson(person),HttpStatus.CREATED);
+    public ResponseEntity<?> createUser(@RequestBody Person person) {
+        try {
+            // Mencoba untuk membuat person baru
+            Person createdPerson = personservice.createPerson(person);
+            return new ResponseEntity<>(createdPerson, HttpStatus.CREATED);
+        } catch (ValidationException ex) {
+            // Menangkap ValidationException dan mengembalikan status 400
+            return new ResponseEntity<>(new ErrorResponse(ex.getMessage()), HttpStatus.BAD_REQUEST);
+        } catch (Exception ex) {
+            // Menangkap exception umum lain dan mengembalikan status 500
+            return new ResponseEntity<>(new ErrorResponse("Terjadi kesalahan di server."), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // Kelas ErrorResponse di dalam controller
+    public static class ErrorResponse {
+        private String message;
+
+        public ErrorResponse(String message) {
+            this.message = message;
+        }
+
+        public String getMessage() {
+            return message;
+        }
     }
 
     @GetMapping 
-    public ResponseEntity<List<Person>> getAllUser(){      
-        System.out.println(ResponseEntity.ok(personservice.findAllPerson()));
+    public ResponseEntity<List<Person>> getAllUser(){
         return ResponseEntity.ok(personservice.findAllPerson());
     }
 

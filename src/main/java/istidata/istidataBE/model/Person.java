@@ -28,6 +28,9 @@ public class Person {
     @NotBlank(message = "Jenis Kelamin harus diisi")
     private String jenisKelamin;
 
+    @Column(nullable = true)
+    private String warnaKesukaan;
+
     @NotNull(message = "Tanggal Lahir harus diisi")
     private String tanggalLahir;
 
@@ -36,8 +39,6 @@ public class Person {
 
     @NotBlank(message = "Asal negara harus diisi")
     private String negara;
-
-    // Lombok will generate getters, setters, toString, equals, hashCode, etc.
 
     public String getNik(){
         return this.nik;
