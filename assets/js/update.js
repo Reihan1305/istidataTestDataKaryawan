@@ -11,6 +11,7 @@ $(document).ready(function () {
       success: function (person) {
         $("#nik").val(person.nik);
         $("#name").val(person.name);
+        $("#warnaKesukaan").val(person.warnaKesukaan);
         $(
           'input[name="jenisKelamin"][value="' + person.jenisKelamin + '"]'
         ).prop("checked", true);
@@ -33,6 +34,7 @@ $(document).ready(function () {
     const tanggalLahir = $("#tanggalLahir").val();
     const alamat = $("#alamat").val();
     const negara = $("#negara").val();
+    const warnaKesukaan = $('#warnaKesukaan').val();
 
     if (!jenisKelamin) {
       alert("Silakan pilih jenis kelamin.");
@@ -58,6 +60,7 @@ $(document).ready(function () {
       tanggalLahir,
       alamat,
       negara,
+      warnaKesukaan
     };
 
     console.log(newKaryawan);

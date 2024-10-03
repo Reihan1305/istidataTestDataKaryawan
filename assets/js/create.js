@@ -12,6 +12,7 @@ $(document).ready(function() {
         const tanggalLahir = $('#tanggalLahir').val();
         const alamat = $('#alamat').val();
         const negara = $('#negara').val();
+        const warnaKesukaan = $('#warnaKesukaan').val();
 
         if (!jenisKelamin) {
             alert('Silakan pilih jenis kelamin.');
@@ -34,23 +35,28 @@ $(document).ready(function() {
             jenisKelamin,
             tanggalLahir,
             alamat,
-            negara
+            negara,
+            warnaKesukaan
         };
 
         console.log(newKaryawan);
-
         $.ajax({
             url: "http://localhost:8080/api/person",
             type: "POST",
             contentType: 'application/json',
             data: JSON.stringify(newKaryawan),
-            success: function() { // Memperbaiki kesalahan pengetikan di sini
+            success: function() { 
                 alert("Data berhasil ditambahkan");
                 window.location.href = "index.html";
             },
-            error: function(error) {
-                alert('Gagal menambahkan karyawan: ' + error.responseText);
+            error: function(xhr) {
+                const response = JSON.parse(xhr.responseText);
+                const message = response.message || 'Terjadi kesalahan saat menambahkan karyawan.';
+        
+                alert('Gagal menambahkan karyawan: ' + message);
+                console.log(xhr);
             }
         });
+        
     });
 });

@@ -26,13 +26,14 @@ $(document).ready(function() {
         $.each(person, function(index, p) {
             karyawanTable += `
                 <tr>
-                    <td style="text-align: center;">${index + 1}</td>
-                    <td style="text-align: center;">${p.nik}</td>
-                    <td style="text-align: center;">${p.name}</td>
-                    <td style="text-align: center;">${p.jenisKelamin == "L" ? "pria" : "wanita"}</td>
-                    <td style="text-align: center;">${formatDate(p.tanggalLahir)}</td>
-                    <td style="text-align: left; width:15rem;">${p.alamat}</td> <!-- Meningkatkan tinggi kolom alamat -->
-                    <td style="text-align: center;">${p.negara}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${index + 1}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${p.nik}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${p.name}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${p.jenisKelamin == "L" ? "pria" : "wanita"}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${p.warnaKesukaan}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${formatDate(p.tanggalLahir)}</td>
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: left; width:15rem;">${p.alamat}</td> <!-- Meningkatkan tinggi kolom alamat -->
+                    <td style="background-color: ${p.warnaKesukaan === "merah"? "red": p.warnaKesukaan === "biru" ? "blue" :"yellow"}; text-align: center;">${p.negara}</td>
                     <td>
                         <button class="p-0 fw-bold text-warning detailbtn" data-id="${p.id}">detail</button>
                         <button class="p-0 fw-bold text-primary editbtn" data-id="${p.id}">edit</button>

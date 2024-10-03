@@ -17,6 +17,7 @@ $(document).ready(function () {
         $(
           'input[name="jenisKelamin"][value="' + person.jenisKelamin + '"]'
         ).prop("checked", true);
+        $("#warnaKesukaan").val(person.warnaKesukaan);
         $("#tanggalLahir").val(person.tanggalLahir);
         $("#alamat").val(person.alamat);
         $("#negara").val(person.negara);
